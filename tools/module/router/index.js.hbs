@@ -1,0 +1,8 @@
+export default [
+  {
+    path: '/{{camelCase name}}',
+    name: '{{pascalCase name}}',
+    component: () =>
+      import(/* webpackChunkName: "{{camelCase name}}" */ '../views/{{pascalCase name}}/Index.vue'),
+  },
+]

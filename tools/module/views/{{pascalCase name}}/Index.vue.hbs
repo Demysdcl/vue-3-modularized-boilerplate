@@ -1,0 +1,16 @@
+<script>
+import { reactive, toRefs } from 'vue'
+
+export default {
+  setup() {
+    const state = reactive({ count: 0 })
+    return {...toRefs(state) }
+  },
+}
+</script>
+
+<template>
+  <h1>This is a page to module {{pascalCase shopping}}</h1>
+</template>
+
+<style lang="scss" scoped></style>
