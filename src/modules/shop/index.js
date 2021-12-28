@@ -1,4 +1,4 @@
 import mainStore from '@/store'
 import localStore from './store'
 
-mainStore.registerModule('{{camelCase name}}', localStore)
+mainStore.registerModule('shop', localStore)

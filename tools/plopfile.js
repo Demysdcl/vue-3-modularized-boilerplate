@@ -42,6 +42,19 @@ module.exports = function (plop) {
         pattern: /\/\/plopfile append pattern - do not remove this comment/g,
         template: "import './{{camelCase name}}'",
       },
+      {
+        type: 'append',
+        path: '../src/modules/router.js',
+        pattern: /\/\/plopfile import pattern - do not remove this comment/g,
+        template:
+          "import {{camelCase name}}Router from './{{camelCase home}}/router'",
+      },
+      {
+        type: 'append',
+        path: '../src/modules/router.js',
+        pattern: /export default \[/g,
+        template: '...{{camelCase name}}Router',
+      },
     ],
   })
 }
