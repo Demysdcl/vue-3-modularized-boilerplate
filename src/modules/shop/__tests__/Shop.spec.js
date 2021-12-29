@@ -1,3 +1,0 @@
-describe('Shop', () => {
-  it('should ', () => {})
-})

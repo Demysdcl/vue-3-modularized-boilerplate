@@ -36,25 +36,26 @@ module.exports = function (plop) {
         destination: '../src/modules/{{camelCase name}}',
         templateFiles: './module',
       },
-      // {
-      //   type: 'append',
-      //   path: '../src/modules/index.js',
-      //   pattern: /\/\/plopfile append pattern - do not remove this comment/g,
-      //   template: "import './{{camelCase name}}'",
-      // },
-      // {
-      //   type: 'append',
-      //   path: '../src/modules/router.js',
-      //   pattern: /\/\/plopfile import pattern - do not remove this comment/g,
-      //   template:
-      //     "import {{camelCase name}}Router from './{{camelCase home}}/router'",
-      // },
-      // {
-      //   type: 'append',
-      //   path: '../src/modules/router.js',
-      //   pattern: /export default \[/g,
-      //   template: '...{{camelCase name}}Router',
-      // },
+      {
+        type: 'append',
+        path: '../src/modules/index.js',
+        pattern: /\/\/plopfile append pattern - do not remove this comment/g,
+        template: "import './{{camelCase name}}'",
+      },
+      {
+        type: 'append',
+        path: '../src/modules/router.js',
+        pattern:
+          /import { createRouter, createWebHashHistory } from 'vue-router'/g,
+        template:
+          "import {{camelCase name}}Router from './{{camelCase name}}/router'",
+      },
+      {
+        type: 'append',
+        path: '../src/modules/router.js',
+        pattern: /const routes = \[/g,
+        template: '...{{camelCase name}}Router,',
+      },
     ],
   })
 }
